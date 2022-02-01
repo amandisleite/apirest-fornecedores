@@ -1,6 +1,6 @@
 const CampoInvalido = require("../../erros/CampoInvalido");
 const DadosNaoFornecidos = require("../../erros/DadosNaoFornecidos");
-const TabelaFornecedor = require("./tabelaFornecedor")
+const TabelaFornecedor = require("./TabelaFornecedor")
 
 class Fornecedor {
     constructor ({ id, empresa, email, categoria, dataCriacao, dataAtualizacao, versao}) {
@@ -52,7 +52,7 @@ class Fornecedor {
         })
 
         if (Object.keys(dadosParaAtualizar).length === 0) {
-            throw new DadosNaoFornecidos;
+            throw new DadosNaoFornecidos();
         }
 
         TabelaFornecedor.atualizar(this.id, dadosParaAtualizar)

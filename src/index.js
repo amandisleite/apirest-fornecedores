@@ -2,6 +2,7 @@ const express = require("express")
 const bodyParser = require("body-parser");
 
 const roteador = require("../rotas/fornecedores/index");
+const roteadorV2 = require("../rotas/fornecedores/rotas.v2");
 
 const NaoEncontrado = require("../erros/NaoEncontrado")
 const CampoInvalido = require("../erros/CampoInvalido");
@@ -33,7 +34,14 @@ app.use((requisicao, resposta, proximo) => {
 })
 
 app.listen(3003, () => console.log('servidor rodando'));
+
+app.use((requisicao, resposta, proximo) => {
+    resposta.set('Access-Control-Allow-Origin', '*')
+    proximo()
+})
+
 app.use('/api/fornecedores', roteador);
+app.use('/api/v2/fornecedores', roteadorV2);
 
 // middleware - tratamento de erro
 app.use((erro, requisicao, resposta, proximo) => {
