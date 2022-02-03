@@ -21,6 +21,9 @@ jobs:
       - name: instalando as depedências
         run: npm install
 
+      - name: instalando jest
+        run: npm install --save-dev jest
+
       # Runs a set of commands using the runners shell
       - name: executando os testes unitários
         run: npm run test
