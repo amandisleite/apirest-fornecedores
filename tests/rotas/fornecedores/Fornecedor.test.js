@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 jest.mock('../../../rotas/fornecedores/TabelaFornecedor')
 const Fornecedor = require('../../../rotas/fornecedores/Fornecedor')
 
@@ -6,7 +7,7 @@ describe('classe Fornecedor', () => {
     const fornecedor = new Fornecedor({
       empresa: 'Gatito',
       email: 'contato@gatito.com.br',
-      categoria: 'brinquedo'
+      categoria: 'brinquedos'
     })
 
     expect(fornecedor.validar()).toBe(true)
@@ -16,12 +17,12 @@ describe('classe Fornecedor', () => {
     const fornecedor = new Fornecedor({
       empresa: 'Gatito',
       email: 'contato@gatito.com.br',
-      categoria: 'brinquedo'
+      categoria: 'brinquedos'
     })
 
     await fornecedor.criar()
 
-    expect(fornecedor.id).toBe(500)
+    expect(fornecedor.id).toBe(400)
     expect(fornecedor.dataCriacao).toBe('10/12/3420')
     expect(fornecedor.dataAtualizacao).toBe('10/12/3420')
     expect(fornecedor.versao).toBe(90)

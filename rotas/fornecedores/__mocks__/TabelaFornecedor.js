@@ -5,7 +5,7 @@ module.exports = {
 
   inserir (fornecedor) {
     return {
-      id: 500,
+      id: 400,
       dataCriacao: '10/12/3420',
       dataAtualizacao: '10/12/3420',
       versao: 90
@@ -14,7 +14,7 @@ module.exports = {
 
   async pegarPorId (id) {
     return {
-      id: 500,
+      id: 400,
       dataCriacao: '10/12/3420',
       dataAtualizacao: '10/12/3420',
       versao: 90
