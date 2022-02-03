@@ -1,24 +1,24 @@
-const roteador = require("express").Router();
+const roteador = require('express').Router()
 
-const TabelaFornecedor = require("./TabelaFornecedor")
-const { SerializadorFornecedor } = require("../../serializador");
+const TabelaFornecedor = require('./TabelaFornecedor')
+const { SerializadorFornecedor } = require('../../serializador')
 
 roteador.options('/', (requisicao, resposta) => {
-    resposta.set('Access-Control-Allow-Methods', 'GET')
-    resposta.set('Access-Control-Allow-Headers', 'Content-Type')
-    resposta.status(204);
-    resposta.end();
+  resposta.set('Access-Control-Allow-Methods', 'GET')
+  resposta.set('Access-Control-Allow-Headers', 'Content-Type')
+  resposta.status(204)
+  resposta.end()
 })
 
 roteador.get('/', async (requisicao, resposta) => {
-    const resultados = await TabelaFornecedor.listar();
-    resposta.status(200);
+  const resultados = await TabelaFornecedor.listar()
+  resposta.status(200)
 
-    const serializador = new SerializadorFornecedor(
-        resposta.getHeader('Content-Type')
-    )
+  const serializador = new SerializadorFornecedor(
+    resposta.getHeader('Content-Type')
+  )
 
-    resposta.send(serializador.serializar(resultados));
+  resposta.send(serializador.serializar(resultados))
 })
 
-module.exports = roteador;
+module.exports = roteador

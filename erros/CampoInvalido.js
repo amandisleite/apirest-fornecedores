@@ -1,12 +1,12 @@
 class CampoInvalido extends Error {
-    constructor(campo) {
-        const mensagem = `o campo ${campo} está inválido`;
+  constructor (campo) {
+    const mensagem = `o campo ${campo} está inválido`
 
-        super(mensagem);
+    super(mensagem)
 
-        this.name = 'CampoInvalido';
-        this.idErro = 1;
-    }
+    this.name = 'CampoInvalido'
+    this.idErro = 1
+  }
 }
 
-module.exports = CampoInvalido;
+module.exports = CampoInvalido
