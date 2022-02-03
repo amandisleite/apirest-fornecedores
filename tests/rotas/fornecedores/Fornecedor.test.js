@@ -14,15 +14,15 @@ describe('classe Fornecedor', () => {
 
   test('o método criar() foi executado com sucesso', async () => {
     const fornecedor = new Fornecedor({
-        empresa: 'Gatito',
-        email: 'contato@gatito.com.br',
-        categoria: 'brinquedo'
-      })
-      await fornecedor.criar()
+      empresa: 'Gatito',
+      email: 'contato@gatito.com.br',
+      categoria: 'brinquedo'
+    })
+    await fornecedor.criar()
 
-      expect(fornecedor.id).toBe(500)
-      expect(fornecedor.dataCriacao).toBe('10/12/3420')
-      expect(fornecedor.dataAtualizacao).toBe('10/12/3420')
-      expect(fornecedor.versao).toBe(90)
+    expect(fornecedor.id).toBe(500)
+    expect(fornecedor.dataCriacao).toBe('10/12/3420')
+    expect(fornecedor.dataAtualizacao).toBe('10/12/3420')
+    expect(fornecedor.versao).toBe(90)
   })
 })
