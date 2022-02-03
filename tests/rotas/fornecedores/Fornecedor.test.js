@@ -1,4 +1,4 @@
-jest.mock('../../../rotas/fornecedores/tabelaFornecedor')
+jest.mock('../../../rotas/fornecedores/TabelaFornecedor')
 const Fornecedor = require('../../../rotas/fornecedores/Fornecedor')
 
 describe('classe Fornecedor', () => {
@@ -18,6 +18,7 @@ describe('classe Fornecedor', () => {
       email: 'contato@gatito.com.br',
       categoria: 'brinquedo'
     })
+
     await fornecedor.criar()
 
     expect(fornecedor.id).toBe(500)
