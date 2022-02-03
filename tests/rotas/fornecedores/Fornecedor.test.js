@@ -1,4 +1,4 @@
-jest.mock('../../../rotas/fornecedores/TabelaFornecedor')
+jest.mock('../../../rotas/fornecedores/tabelaFornecedor')
 const Fornecedor = require('../../../rotas/fornecedores/Fornecedor')
 
 describe('classe Fornecedor', () => {
